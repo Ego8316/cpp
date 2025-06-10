@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:07:11 by ego               #+#    #+#             */
-/*   Updated: 2025/06/10 18:10:13 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/10 18:25:35 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class	PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void	printWelcome(void);
-		void	printPrompt(void);
-		bool	handleCommand(const std::string &cmd);
+		void	print_welcome(void);
+		void	print_prompt(void);
+		bool	handle_command(const std::string &cmd);
 };
 
 #endif

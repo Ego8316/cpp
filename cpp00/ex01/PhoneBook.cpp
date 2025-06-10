@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:30:27 by ego               #+#    #+#             */
-/*   Updated: 2025/06/10 18:12:11 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/10 18:25:45 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,20 @@ PhoneBook::~PhoneBook(void)
 	return ;
 }
 
-void	PhoneBook::printWelcome(void)
+void	PhoneBook::print_welcome(void)
 {
 	std::cout << COLOR_B << "--- Welcome to My Awesome PhoneBook ---\n" << C_RESET;
 	std::cout << "Available commands: ADD, SEARCH and EXIT\n";
 	return ;
 }
 
-void	PhoneBook::printPrompt(void)
+void	PhoneBook::print_prompt(void)
 {
 	std::cout << COLOR_B << "phonebook > " << C_RESET;
 	return ;
 }
 
-bool	PhoneBook::handleCommand(const std::string &cmd)
+bool	PhoneBook::handle_command(const std::string &cmd)
 {
 	if (cmd.empty())
 		return (true);

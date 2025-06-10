@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:16:11 by ego               #+#    #+#             */
-/*   Updated: 2025/06/10 18:09:09 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/10 18:26:02 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	main(void)
 	PhoneBook			phonebook;
 	std::string			input;
 
-	phonebook.printWelcome();
+	phonebook.print_welcome();
 	while (true)
 	{
-		phonebook.printPrompt();
+		phonebook.print_prompt();
 		if (!std::getline(std::cin, input))
 			break ;
-		if (!phonebook.handleCommand(input))
+		if (!phonebook.handle_command(input))
 			break ;
 	}
 	std::cout << std::endl;
