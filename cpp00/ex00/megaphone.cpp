@@ -6,11 +6,12 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 15:05:40 by ego               #+#    #+#             */
-/*   Updated: 2025/06/10 15:45:10 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/10 16:11:34 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 /**
  * @brief If only one argument (program name), prints the default message.
