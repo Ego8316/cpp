@@ -6,13 +6,13 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/06/11 22:25:48 by ego              ###   ########.fr        #
+#    Updated: 2025/06/12 00:16:59 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SDIR		=	./
 SRCS		=	main.cpp	\
-				Harl.cpp
+				Fixed.cpp
 ODIR		=	objs/
 OBJS		=	$(addprefix $(ODIR), $(SRCS:.cpp=.o))
 IDIR		=	.
@@ -22,7 +22,7 @@ CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 
-NAME		=	harlFilter
+NAME		=	a.out
 
 all			:	$(NAME)
 
