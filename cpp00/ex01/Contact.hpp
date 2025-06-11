@@ -6,13 +6,15 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:07:59 by ego               #+#    #+#             */
-/*   Updated: 2025/06/10 19:09:34 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/11 14:53:47 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+#include <iostream>
+#include <sstream>
 #include <string>
 
 class	Contact
@@ -24,19 +26,25 @@ class	Contact
 		std::string	_phone_number;
 		std::string	_darkest_secret;
 
-		std::string	_trim(std::string const &s);
-		bool		_is_valid_name(std::string const &s);
-		bool		_is_valid_number(std::string const &s);
-	
+		std::string	_trim(std::string const &s) const;
+		bool		_is_valid_name(std::string const &s) const;
+		bool		_is_valid_number(std::string const &s) const;
+		std::string	_format_column(std::string s) const;
+
 	public:
 		Contact(void);
 		~Contact(void);
 
-		bool	set_first_name(const std::string &input);
-		bool	set_last_name(const std::string &input);
-		bool	set_nickname(const std::string &input);
-		bool	set_phone_number(const std::string &input);
-		bool	set_darkest_secret(const std::string &input);
+		std::string		get_first_name(void) const;
+		std::string		get_last_name(void) const;
+		std::string		get_nickname(void) const;
+		std::string		get_phone_number(void) const;
+		std::string		get_darkest_secret(void) const;
+		bool			set_first_name(const std::string &input);
+		bool			set_last_name(const std::string &input);
+		bool			set_nickname(const std::string &input);
+		bool			set_phone_number(const std::string &input);
+		bool			set_darkest_secret(const std::string &input);
 };
 
 #endif
