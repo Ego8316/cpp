@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:36:25 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 14:53:33 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/11 23:07:20 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,7 +222,7 @@ bool	Contact::set_darkest_secret(const std::string &input)
 {
 	std::string	darkest_secret = _trim(input);
 
-	if (input.empty())
+	if (darkest_secret.empty())
 		return (false);
 	_darkest_secret = darkest_secret;
 	return (true);
