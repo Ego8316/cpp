@@ -6,14 +6,15 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/06/11 17:50:06 by ego              ###   ########.fr        #
+#    Updated: 2025/06/11 17:52:00 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SDIR		=	./
 SRCS		=	main.cpp		\
-				Contact.cpp		\
-				PhoneBook.cpp
+				newZombie.cpp	\
+				randomChump.cpp	\
+				Zombie.cpp
 ODIR		=	objs/
 OBJS		=	$(addprefix $(ODIR), $(SRCS:.cpp=.o))
 IDIR		=	.
@@ -23,7 +24,7 @@ CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 
-NAME		=	phonebook
+NAME		=	zombie
 
 all			:	$(NAME)
 
