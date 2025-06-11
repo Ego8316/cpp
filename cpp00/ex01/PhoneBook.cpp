@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:30:27 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 19:49:09 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/11 22:58:58 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ const PhoneBook::FieldConfig	PhoneBook::_fields[] = {
 	{"First name", &Contact::set_first_name, &Contact::get_first_name, NAME_ERR},
 	{"Last name", &Contact::set_last_name, &Contact::get_last_name, NAME_ERR},
 	{"Nickname", &Contact::set_nickname, &Contact::get_nickname, NAME_ERR},
-	{"Phone number", &Contact::set_phone_number, &Contact::get_phone_number, NAME_ERR},
+	{"Phone number", &Contact::set_phone_number, &Contact::get_phone_number, NUMB_ERR},
 	{"Darkest secret", &Contact::set_darkest_secret, &Contact::get_darkest_secret, EMPT_ERR},
 	{NULL, NULL, NULL, NULL}
 };
