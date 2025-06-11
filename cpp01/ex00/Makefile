@@ -6,13 +6,14 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/06/11 17:50:03 by ego              ###   ########.fr        #
+#    Updated: 2025/06/11 17:50:06 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SDIR		=	./
-SRCS		=	tests.cpp	\
-				Account.cpp
+SRCS		=	main.cpp		\
+				Contact.cpp		\
+				PhoneBook.cpp
 ODIR		=	objs/
 OBJS		=	$(addprefix $(ODIR), $(SRCS:.cpp=.o))
 IDIR		=	.
@@ -22,8 +23,7 @@ CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 
-NAME		=	account
-LOG			=	original.log
+NAME		=	phonebook
 
 all			:	$(NAME)
 
@@ -51,51 +51,10 @@ fclean		:	clean
 				$(RM) $(NAME)
 				printf "$(COLOR_O)[OK] All binary files have been removed.$(C_RESET)\n"
 
-$(LOG)		:
-				echo "Fetching original log..."
-				wget https://cdn.intra.42.fr/document/document/34946/19920104_091532.log -q -O $(ODIR)$(LOG) && \
-				echo "$(COLOR_G)[OK] Original log file downloaded. $(C_RESET)" || \
-				echo "$(COLOR_R)[KO] Could not download original log file. $(C_RESET)"
-
-test		:	$(NAME) $(LOG)
-				./$(NAME) > $(ODIR)test.log
-				echo "Checking timestamp..."
-				awk 'NR==1 { gsub(/\[|\]/, "", $$1); print $$1 }' $(ODIR)test.log > $(ODIR)timestamp.txt
-				ts=$$(cat $(ODIR)timestamp.txt); \
-				if [ -z "$$ts" ]; then \
-					echo "$(COLOR_R)[KO] No timestamp found!$(C_RESET)"; \
-					make -s clean; \
-					exit 1; \
-				fi; \
-				ts_date=$${ts%_*}; \
-				ts_hour=$${ts#*_}; \
-				today_date=$$(date +%Y%m%d); \
-				today_hour=$$(date +%H%M%S); \
-				if [ "$$ts_date" = "$$today_date" ] && [ "$$ts_hour" = "$$today_hour" ]; then \
-					echo "$(COLOR_G)[OK] Date OK: $$ts_date $$ts_hour$(C_RESET)"; \
-				else \
-					echo "$(COLOR_R)[KO] Date MISMATCH: $$ts_date $$ts_hour != $$today_date $$today_hour$(C_RESET)"; \
-					make -s clean; \
-					exit 1; \
-				fi
-				echo "Checking content..."
-				cut -d " " -f2- $(ODIR)test.log > $(ODIR)stripped_test.log
-				cut -d " " -f2- $(ODIR)$(LOG) > $(ODIR)stripped_original.log
-				diff $(ODIR)stripped_test.log $(ODIR)stripped_original.log > /dev/null ; \
-				if [ $$? -eq 0 ]; then \
-					echo "$(COLOR_G)[OK] Output content matches original.$(C_RESET)" ; \
-				else \
-					echo "$(COLOR_R)[KO] Output content differs from original.$(C_RESET)" ; \
-					diff $(ODIR)stripped_test.log $(ODIR)stripped_original.log ; \
-					make -s clean; \
-					exit 1; \
-				fi
-				make -s clean
-
 re			:	fclean all
 
-.PHONY		:	all clean fclean re lclean
-.SILENT		:	all $(NAME) $(ODIR) $(OBJS) clean fclean re test $(LOG)
+.PHONY		:	all clean fclean re
+.SILENT		:	all $(NAME) $(ODIR) $(OBJS) clean fclean re
 
 COLOR_R		= \033[31m
 COLOR_O		= \033[38;5;214m

@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/06/10 17:38:07 by ego              ###   ########.fr        #
+#    Updated: 2025/06/11 17:49:57 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS		=	$(addprefix $(ODIR), $(SRCS:.cpp=.o))
 IDIR		=	.
 INCL		=	-I $(IDIR)
 
-CC			=	g++
+CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 
