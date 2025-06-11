@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 18:00:36 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 18:50:52 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/11 19:46:30 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ Zombie::Zombie(void)
 }
 
 Zombie::Zombie(std::string name)
+	:	_name(name)
 {
-	_name = name;
 	return ;
 }
 

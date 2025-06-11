@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 18:00:36 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 19:46:45 by ego              ###   ########.fr       */
+/*   Created: 2025/06/11 19:14:29 by ego               #+#    #+#             */
+/*   Updated: 2025/06/11 19:42:48 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie::Zombie(void)
+Weapon::Weapon(void)
+{
+	_type = "fists";
+	return ;
+}
+
+Weapon::Weapon(std::string type)
+{
+	_type = type;
+}
+
+Weapon::~Weapon(void)
 {
 	return ;
 }
 
-Zombie::Zombie(std::string name)
-	:	_name(name)
+std::string const	&Weapon::getType(void) const
 {
-	return ;
+	std::string const	&ref = _type;
+	return (ref);
 }
 
-Zombie::~Zombie(void)
+void	Weapon::setType(std::string type)
 {
-	std::cout << _name << " died\n";
-	return ;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
-	return ;
+	_type = type;
 }

@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 16:30:27 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 14:55:27 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/11 19:49:09 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,8 @@ const PhoneBook::FieldConfig	PhoneBook::_fields[] = {
  * @brief Default constructor for PhoneBook.
  */
 PhoneBook::PhoneBook(void)
+	:	_index(0), _size(0)
 {
-	_index = 0;
-	_size = 0;
 	return ;
 }
 

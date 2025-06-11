@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/11 18:00:36 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 19:46:45 by ego              ###   ########.fr       */
+/*   Created: 2025/06/11 19:28:14 by ego               #+#    #+#             */
+/*   Updated: 2025/06/11 19:40:10 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMAN_B_HPP
+# define HUMAN_B_HPP
 
-Zombie::Zombie(void)
-{
-	return ;
-}
+# include <iostream>
+# include "Weapon.hpp"
 
-Zombie::Zombie(std::string name)
-	:	_name(name)
+class	HumanB
 {
-	return ;
-}
+	private:
+		std::string	_name;
+		Weapon		*_weapon;
 
-Zombie::~Zombie(void)
-{
-	std::cout << _name << " died\n";
-	return ;
-}
+	public:
+		HumanB(std::string name);
+		~HumanB(void);
+		void	setWeapon(Weapon &weapon);
+		void	attack(void) const;
 
-void	Zombie::announce(void)
-{
-	std::cout << _name << ": BraiiiiiiinnnzzzZ...\n";
-	return ;
-}
+};
+
+#endif

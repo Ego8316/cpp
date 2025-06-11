@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 15:00:42 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 17:12:34 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/11 19:48:52 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,21 @@ int	Account::_totalNbWithdrawals = 0;
 
 // Default constructor
 Account::Account(void)
+	:	_amount(0),
+		_nbDeposits(0),
+		_nbWithdrawals(0)
 {
-	_amount = 0;
-	_nbDeposits = 0;
-	_nbWithdrawals = 0;
 	Account::_nbAccounts++;
+	return ;
 }
 
 // Constructor
 Account::Account(int initial_deposit)
+	:	_accountIndex(Account::_nbAccounts),
+		_amount(initial_deposit),
+		_nbDeposits(0),
+		_nbWithdrawals(0)
 {
-	_accountIndex = _nbAccounts;
-	_amount = initial_deposit;
-	_nbDeposits = 0;
-	_nbWithdrawals = 0;
 	Account::_nbAccounts++;
 	Account::_totalAmount += _amount;
 	_displayTimestamp();
