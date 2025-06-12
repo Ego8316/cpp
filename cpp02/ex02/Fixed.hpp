@@ -6,15 +6,15 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 23:48:32 by ego               #+#    #+#             */
-/*   Updated: 2025/06/12 02:13:55 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/12 02:43:21 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
-#include <cmath>
+# include <iostream>
+# include <cmath>
 
 class	Fixed
 {
