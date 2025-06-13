@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 19:24:00 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 19:45:53 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/12 15:57:16 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ HumanA::~HumanA(void)
 void	HumanA::attack(void) const
 {
 	std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
+	return ;
 }

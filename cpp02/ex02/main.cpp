@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 00:12:38 by ego               #+#    #+#             */
-/*   Updated: 2025/06/12 02:34:11 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/13 11:34:07 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ int	main(void)
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a-- << std::endl;
 	std::cout << a << std::endl;
 	
 	std::cout << b << std::endl;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 02:43:45 by ego               #+#    #+#             */
-/*   Updated: 2025/06/12 04:36:28 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/13 11:37:21 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ Point	&Point::operator=(Point const &src)
 
 Fixed const	&Point::getX(void) const
 {
-	return (this->_x);
+	return (_x);
 }
 
 Fixed const	&Point::getY(void) const
 {
-	return (this->_y);
+	return (_y);
 }
 
 // Stream operator overloading

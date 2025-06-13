@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 20:00:44 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 21:34:06 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/13 11:40:43 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,27 +87,20 @@ static bool	open_fstreams(std::string filename, std::ifstream &in, std::ofstream
 }
 
 /**
- * @brief Replaces all occurences of string `s1` with string `s2` in the input
- * file stream and write the result to the output file stream.
+ * @brief Reads the input file line by line and adds it to the given string.
+ * Ensures that it preserves the original file's newline structure by only
+ * adding newline characters if the original file actually contained them.
  * 
- * Reads the input file line by line, searches for all non-overlapping
- * occurences of `s1` within each line, and replaces them with `s2`. The
- * modified lines are then written to the output file stream. Ensures that it
- * preserves the original file's newline structure by only adding newline
- * characters if the original file contained them.
+ * @param ifstream Input file stream.
+ * @param content Reference to the string to append.
  * 
- * @param in Reference to the input file stream.
- * @param out Reference to the output file stream.
- * @param s1 The substring to search for and replace.
- * @param s2 The substring to insert in place of s1.
- * 
- * @return true if everything went fine, 0 otherwise.
+ * @param true if everything went fine, false otherwise.
  */
-static bool	replace(std::ifstream &in, std::ofstream &out, std::string s1, std::string s2)
+static bool	getcontent(std::ifstream &in, std::string &content)
 {
-	std::string	line;
-	size_t		pos;
 	
+	std::string	line;
+
 	while (std::getline(in, line))
 	{
 		if (in.bad())
@@ -116,24 +109,37 @@ static bool	replace(std::ifstream &in, std::ofstream &out, std::string s1, std::
 					<< C_RESET << std::endl;
 			return (false);
 		}
-		pos = 0;
-		while ((pos = line.find(s1, pos)) != std::string::npos)
-		{
-			line.erase(pos, s1.length());
-			line.insert(pos, s2);
-			pos += s2.length();
-		}
-		out << line;
-		if (in.peek() != EOF)
-			out << std::endl;
-		if (out.bad())
-		{
-			std::cerr << COLOR_R << "Error: writing to output stream failed."
-					<< C_RESET << std::endl;
-			return (false);
-		}
+		content += line;
+		if (!in.eof())
+			content += "\n";
 	}
 	return (true);
+}
+
+/**
+ * @brief Replaces all occurences of string `s1` with string `s2` in given
+ * string.
+ * 
+ * Searches for all non-overlapping occurences of `s1` within each line, and
+ * replaces them with `s2`.
+ * 
+ * @param in Content to be searched.
+ * @param s1 The substring to search for and replace.
+ * @param s2 The substring to insert in place of s1.
+ * 
+ * @return true if everything went fine, 0 otherwise.
+ */
+static void	replace(std::string &content, std::string s1, std::string s2)
+{
+	size_t		pos;
+	pos = 0;
+	while ((pos = content.find(s1, pos)) != std::string::npos)
+	{
+		content.erase(pos, s1.length());
+		content.insert(pos, s2);
+		pos += s2.length();
+	}
+	return ;
 }
 
 int	main(int ac, char **av)
@@ -145,13 +151,21 @@ int	main(int ac, char **av)
 	std::string		s2(av[3]);
 	std::ifstream	infile;
 	std::ofstream	outfile;
+	std::string		content;
 
 	if (!open_fstreams(filename, infile, outfile))
 		return (1);
-	bool	status = replace(infile, outfile, s1, s2);
+	content = "";
+	if (!getcontent(infile, content))
+	{
+		infile.close();
+		outfile.close();
+		return (1);
+	}
+	replace(content, s1, s2);
+	outfile << content;
 	infile.close();
 	outfile.close();
-	if (status)
-		std::cout << COLOR_G << "Successfully replaced!" << C_RESET << std::endl;
-	return (status ? 0 : 1);
+	std::cout << COLOR_G << "Successfully replaced!" << C_RESET << std::endl;
+	return (0);
 }

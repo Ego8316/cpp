@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 19:14:29 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 19:55:59 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/12 15:56:42 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ std::string const	&Weapon::getType(void) const
 void	Weapon::setType(std::string type)
 {
 	_type = type;
+	return ;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 21:45:06 by ego               #+#    #+#             */
-/*   Updated: 2025/06/11 22:03:33 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/12 16:03:33 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int	main(int ac, char **av)
 	Harl	harl;
 
 	if (ac < 2)
+	{
+		harl.complain("aaa");
 		return (0);
+	}
 	for (int i = 1; i < ac; ++i)
 	{
 		std::string	level(av[i]);
