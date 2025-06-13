@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 15:40:32 by ego               #+#    #+#             */
-/*   Updated: 2025/06/13 16:57:18 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/13 18:54:33 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class	ClapTrap
 
 	public:
 		ClapTrap(void);
-		ClapTrap(std::string name);
+		ClapTrap(std::string const &name);
 		ClapTrap(ClapTrap const &src);
 		~ClapTrap(void);
 

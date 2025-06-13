@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:53:20 by ego               #+#    #+#             */
-/*   Updated: 2025/06/13 17:04:47 by ego              ###   ########.fr       */
+/*   Updated: 2025/06/13 18:56:39 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 int main(void)
 {
-	std::cout << "--- Creating ClapTrap A (R2D2) ---" << std::endl;
-	ClapTrap A("R2D2");
+	std::cout << "--- Creating ClapTrap A (L4CK-TP) ---" << std::endl;
+	ClapTrap A("L4CK-TP");
 
-	std::cout << "--- Creating ClapTrap B (C3PO) ---" << std::endl;
-	ClapTrap B("C3PO");
+	std::cout << "--- Creating ClapTrap B (CU5TM-TP) ---" << std::endl;
+	ClapTrap B("CU5TM-TP");
 
 	std::cout << "--- A attacks B ---" << std::endl;
 	A.attack(B.getName());
@@ -57,7 +57,7 @@ int main(void)
 	C.attack("someone"); // should also have no energy
 
 	std::cout << "--- Assignment operator test ---" << std::endl;
-	ClapTrap D("NEWBIE");
+	ClapTrap D("B4R-BOT");
 	D = B; // assign dead B to D
 	D.attack("someone"); // D is now also defunct
 	return (0);
