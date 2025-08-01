@@ -6,13 +6,14 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/07/28 14:19:41 by ego              ###   ########.fr        #
+#    Updated: 2025/08/01 15:52:03 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SDIR		=	./
 SRCS		=	main.cpp		\
 				ClapTrap.cpp	\
+				ScavTrap.cpp	\
 				FragTrap.cpp	
 ODIR		=	objs/
 OBJS		=	$(addprefix $(ODIR), $(SRCS:.cpp=.o))

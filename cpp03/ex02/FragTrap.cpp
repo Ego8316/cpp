@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 14:19:55 by ego               #+#    #+#             */
-/*   Updated: 2025/08/01 15:42:27 by ego              ###   ########.fr       */
+/*   Updated: 2025/08/01 15:51:35 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,10 @@ void	FragTrap::attack(std::string const &target)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap " << _name << " kindly asks for a high-fives!" << std::endl;
+	std::cout << "Frag Trap " << _name;
+	if (_hitPoints == 0)
+		std::cout << " is depleted, he cannot reach for a high_fives..." << std::endl;
+	else
+		std::cout << " kindly asks for a high-fives!" << std::endl;
 	return ;
 }
