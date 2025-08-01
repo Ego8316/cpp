@@ -6,18 +6,17 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 16:53:20 by ego               #+#    #+#             */
-/*   Updated: 2025/08/01 15:40:52 by ego              ###   ########.fr       */
+/*   Updated: 2025/08/01 15:41:20 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-	std::cout << "--- Creating ScavTrap A (SC4V-TP) ---" << std::endl;
-	ScavTrap A("SC4V-TP");
-	A.guardGate();
+	std::cout << "--- Creating FragTrap A (FR4G-TP) ---" << std::endl;
+	FragTrap A("FR4G-TP");
+	A.highFivesGuys();
 	A.attack("intruder");
-	A.beRepaired(50);
 	return (0);
 }

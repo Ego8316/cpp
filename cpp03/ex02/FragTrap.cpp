@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/13 18:21:45 by ego               #+#    #+#             */
-/*   Updated: 2025/08/01 15:42:32 by ego              ###   ########.fr       */
+/*   Created: 2025/07/28 14:19:55 by ego               #+#    #+#             */
+/*   Updated: 2025/08/01 15:42:27 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 // Constructors
 
-ScavTrap::ScavTrap(void)
-	:	ClapTrap(SCAV_DEFAULT_NAME)
+FragTrap::FragTrap(void)
+	:	ClapTrap(FRAG_DEFAULT_NAME)
 {
-	std::cout << "ScavTrap default constructor called" << std::endl;
-	_hitPoints = SCAV_DEFAULT_HIT_POINTS;
-	_energyPoints = SCAV_DEFAULT_ENERGY_POINTS;
-	_attackDamage = SCAV_DEFAULT_ATTACK_DAMAGE;
-	_maxHitPoints = SCAV_DEFAULT_HIT_POINTS;
+	std::cout << "FragTrap default constructor called" << std::endl;
+	_hitPoints = FRAG_DEFAULT_HIT_POINTS;
+	_energyPoints = FRAG_DEFAULT_ENERGY_POINTS;
+	_attackDamage = FRAG_DEFAULT_ATTACK_DAMAGE;
+	_maxHitPoints = FRAG_DEFAULT_HIT_POINTS;
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string const &name)
+FragTrap::FragTrap(std::string const &name)
 	:	ClapTrap(name)
 {
-	std::cout << "ScavTrap string constructor called" << std::endl;
-	_hitPoints = SCAV_DEFAULT_HIT_POINTS;
-	_energyPoints = SCAV_DEFAULT_ENERGY_POINTS;
-	_attackDamage = SCAV_DEFAULT_ATTACK_DAMAGE;
-	_maxHitPoints = SCAV_DEFAULT_HIT_POINTS;
+	std::cout << "FragTrap string constructor called" << std::endl;
+	_hitPoints = FRAG_DEFAULT_HIT_POINTS;
+	_energyPoints = FRAG_DEFAULT_ENERGY_POINTS;
+	_attackDamage = FRAG_DEFAULT_ATTACK_DAMAGE;
+	_maxHitPoints = FRAG_DEFAULT_HIT_POINTS;
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src)
+FragTrap::FragTrap(FragTrap const &src)
 	:	ClapTrap(src.getName())
 {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << "FragTrap copy constructor called" << std::endl;
 	_hitPoints = src.getHitPoints();
 	_energyPoints = src.getEnergyPoints();
 	_attackDamage = src.getAttackDamage();
@@ -47,13 +47,13 @@ ScavTrap::ScavTrap(ScavTrap const &src)
 	return ;
 }
 
-ScavTrap::~ScavTrap(void)
+FragTrap::~FragTrap(void)
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "FragTrap destructor called" << std::endl;
 	return ;
 }
 
-ScavTrap	&ScavTrap::operator=(ScavTrap const &src)
+FragTrap	&FragTrap::operator=(FragTrap const &src)
 {
 	if (this != &src)
 	{
@@ -68,9 +68,9 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &src)
 
 // Methods
 
-void	ScavTrap::attack(std::string const &target)
+void	FragTrap::attack(std::string const &target)
 {
-	std::cout << "ScavTrap " << _name;
+	std::cout << "FragTrap " << _name;
 	if (_hitPoints == 0)
 	{
 		std::cout << " is depleted, he cannot attack..." << std::endl;
@@ -86,14 +86,14 @@ void	ScavTrap::attack(std::string const &target)
 	--_energyPoints;
 	if (_energyPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name;
+		std::cout << "FragTrap " << _name;
 		std::cout << " is now powered down..." << std::endl;
 	}
 	return ;
 }
 
-void	ScavTrap::guardGate(void)
+void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "ScavTrap " << _name << " is now in Gate keeper mode" << std::endl;
+	std::cout << "FragTrap " << _name << " kindly asks for a high-fives!" << std::endl;
 	return ;
 }
