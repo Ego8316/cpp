@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/28 14:19:55 by ego               #+#    #+#             */
-/*   Updated: 2025/08/12 13:10:15 by ego              ###   ########.fr       */
+/*   Created: 2025/06/13 18:21:45 by ego               #+#    #+#             */
+/*   Updated: 2025/08/12 13:25:17 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 // Constructors
 
-FragTrap::FragTrap(void)
-	:	ClapTrap(FRAG_DEFAULT_NAME)
+ScavTrap::ScavTrap(void)
+	:	ClapTrap(SCAV_DEFAULT_NAME)
 {
-	std::cout << "FragTrap default constructor called" << std::endl;
-	_hitPoints = FRAG_DEFAULT_HIT_POINTS;
-	_energyPoints = FRAG_DEFAULT_ENERGY_POINTS;
-	_attackDamage = FRAG_DEFAULT_ATTACK_DAMAGE;
-	_maxHitPoints = FRAG_DEFAULT_HIT_POINTS;
+	std::cout << "ScavTrap default constructor called" << std::endl;
+	_hitPoints = SCAV_DEFAULT_HIT_POINTS;
+	_energyPoints = SCAV_DEFAULT_ENERGY_POINTS;
+	_attackDamage = SCAV_DEFAULT_ATTACK_DAMAGE;
+	_maxHitPoints = SCAV_DEFAULT_HIT_POINTS;
 	return ;
 }
 
-FragTrap::FragTrap(std::string const &name)
+ScavTrap::ScavTrap(std::string const &name)
 	:	ClapTrap(name)
 {
-	std::cout << "FragTrap string constructor called" << std::endl;
-	_hitPoints = FRAG_DEFAULT_HIT_POINTS;
-	_energyPoints = FRAG_DEFAULT_ENERGY_POINTS;
-	_attackDamage = FRAG_DEFAULT_ATTACK_DAMAGE;
-	_maxHitPoints = FRAG_DEFAULT_HIT_POINTS;
+	std::cout << "ScavTrap string constructor called" << std::endl;
+	_hitPoints = SCAV_DEFAULT_HIT_POINTS;
+	_energyPoints = SCAV_DEFAULT_ENERGY_POINTS;
+	_attackDamage = SCAV_DEFAULT_ATTACK_DAMAGE;
+	_maxHitPoints = SCAV_DEFAULT_HIT_POINTS;
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const &src)
+ScavTrap::ScavTrap(ScavTrap const &src)
 	:	ClapTrap(src.getName())
 {
-	std::cout << "FragTrap copy constructor called" << std::endl;
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 	_hitPoints = src.getHitPoints();
 	_energyPoints = src.getEnergyPoints();
 	_attackDamage = src.getAttackDamage();
@@ -47,13 +47,13 @@ FragTrap::FragTrap(FragTrap const &src)
 	return ;
 }
 
-FragTrap::~FragTrap(void)
+ScavTrap::~ScavTrap(void)
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	std::cout << "ScavTrap destructor called" << std::endl;
 	return ;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &src)
+ScavTrap	&ScavTrap::operator=(ScavTrap const &src)
 {
 	if (this != &src)
 	{
@@ -68,9 +68,9 @@ FragTrap	&FragTrap::operator=(FragTrap const &src)
 
 // Methods
 
-void	FragTrap::attack(std::string const &target)
+void	ScavTrap::attack(std::string const &target)
 {
-	std::cout << "FragTrap " << _name;
+	std::cout << "ScavTrap " << _name;
 	if (_hitPoints == 0)
 	{
 		std::cout << " is depleted, he cannot attack..." << std::endl;
@@ -86,18 +86,18 @@ void	FragTrap::attack(std::string const &target)
 	--_energyPoints;
 	if (_energyPoints == 0)
 	{
-		std::cout << "FragTrap " << _name;
+		std::cout << "ScavTrap " << _name;
 		std::cout << " is now powered down..." << std::endl;
 	}
 	return ;
 }
 
-void	FragTrap::highFivesGuys(void)
+void	ScavTrap::guardGate(void)
 {
-	std::cout << "FragTrap " << _name;
+	std::cout << "ScavTrap " << _name;
 	if (_hitPoints == 0)
-		std::cout << " is depleted, he cannot reach for a high fives..." << std::endl;
+		std::cout << " is depleted, he cannot get in Gate keeper mode" << std::endl;
 	else
-		std::cout << " kindly asks for a high-fives!" << std::endl;
+		std::cout << " is now in Gate keeper mode" << std::endl;
 	return ;
 }
