@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 15:31:06 by ego               #+#    #+#             */
-/*   Updated: 2025/08/19 16:15:39 by ego              ###   ########.fr       */
+/*   Updated: 2025/09/01 21:40:28 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@ Dog::Dog(void)	:	Animal()
 {
 	std::cout << "Dog default constructor called" << std::endl;
 	_type = "Dog";
-	return ;
-}
-
-Dog::Dog(std::string const &type)	:	Animal(type)
-{
-	std::cout << "Dog parameterized constructor called" << std::endl;
 	return ;
 }
 

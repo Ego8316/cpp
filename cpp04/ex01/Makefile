@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/09/01 15:51:04 by ego              ###   ########.fr        #
+#    Updated: 2025/09/01 15:52:32 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ FILES		=	main.cpp		\
 				Dog.cpp			\
 				Cat.cpp			\
 				WrongAnimal.cpp	\
-				WrongCat.cpp
+				WrongCat.cpp	\
+				Brain.cpp
 ODIR		=	objs/
 SRCS		=	$(addprefix $(SDIR), $(FILES))
 OBJS		=	$(addprefix $(ODIR), $(FILES:.cpp=.o))
@@ -27,7 +28,7 @@ CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 
-NAME		=	animal
+NAME		=	brain
 
 all			:	$(NAME)
 

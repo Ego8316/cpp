@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 14:50:59 by ego               #+#    #+#             */
-/*   Updated: 2025/08/19 15:30:45 by ego              ###   ########.fr       */
+/*   Updated: 2025/09/01 21:39:50 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ class	Dog	:	public	Animal
 {
 	public:
 		Dog(void);
-		Dog(std::string const &type);
+		Dog	&operator=(Dog const &src);
 		Dog(Dog const &src);
 		~Dog(void);
-
-		Dog	&operator=(Dog const &src);
 
 		void	makeSound(void) const;
 };

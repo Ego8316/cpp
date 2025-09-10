@@ -18,12 +18,6 @@ WrongAnimal::WrongAnimal(void)	:	_type("WrongAnimal")
 	return ;
 }
 
-WrongAnimal::WrongAnimal(std::string const &type)	:	_type(type)
-{
-	std::cout << "WrongAnimal parametrized constructor called" << std::endl;
-	return ;
-}
-
 WrongAnimal::WrongAnimal(WrongAnimal const &src)
 {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
