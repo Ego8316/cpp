@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 16:07:26 by ego               #+#    #+#             */
-/*   Updated: 2025/11/22 17:25:04 by ego              ###   ########.fr       */
+/*   Updated: 2025/11/22 19:26:50 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	Form::beSigned(const Bureaucrat &signer)
 {
 	if (signer.getGrade() > _signGrade)
 		throw GradeTooLowException();
+	if (_signed)
+		throw AlreadySignedException();
 	_signed = true;
 	return ;
 }

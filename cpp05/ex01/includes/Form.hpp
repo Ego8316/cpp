@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 16:07:19 by ego               #+#    #+#             */
-/*   Updated: 2025/11/22 17:15:27 by ego              ###   ########.fr       */
+/*   Updated: 2025/11/22 19:26:30 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ class	Form
 		{
 			public:
 				const char	*what() const throw() { return "Grade is too high!"; } 
+		};
+		class	AlreadySignedException	:	public	std::exception
+		{
+			public:
+				const char	*what() const throw() { return "Already signed!"; }
 		};
 
 		Form(void);
