@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "42",
+            "includePath": [
+                "/home/ego/42/Rank04/cpp/cpp05/ex02/includes"
+            ],
+            "compilerPath": "/usr/bin/clang++",
+            "cStandard": "c11",
+            "cppStandard": "c++98"
+        }
+    ],
+    "version": 4
+}
