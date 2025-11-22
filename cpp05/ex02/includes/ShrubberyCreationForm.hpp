@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 20:02:52 by ego               #+#    #+#             */
-/*   Updated: 2025/11/22 20:05:04 by ego              ###   ########.fr       */
+/*   Updated: 2025/11/22 20:23:25 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "AForm.hpp"
 
-#define SHRUBBERY_NAME "Presidential Pardon Form"
+#define SHRUBBERY_NAME "Shrubbery Creation Form"
 
 class	ShrubberyCreationForm	:	public	AForm
 {
