@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 15:21:05 by ego               #+#    #+#             */
-/*   Updated: 2025/11/22 20:26:34 by ego              ###   ########.fr       */
+/*   Updated: 2025/11/24 19:18:57 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,48 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
-int	main(void)
+int main()
 {
-	Bureaucrat	A("Marc", 135);
-	Bureaucrat	B("Etienne", 40);
-	Bureaucrat	C("Macron", 1);
-	std::cout << A << std::endl << B << std::endl << C << std::endl;
+	Intern	someRandomIntern;
+	AForm	*form;
 
-	ShrubberyCreationForm	shrub("forest");
-	RobotomyRequestForm		robo("Connor");
-	PresidentialPardonForm	pres("Thierry");
-	std::cout << std::endl << shrub << std::endl << robo << std::endl << pres << std::endl;
+	try
+	{
+		form = someRandomIntern.makeForm("presidential pardon", "Marc");
+		std::cout << "Form created: " << *form << std::endl << std::endl;
+		delete form;
 
-	std::cout << std::endl << "First trying to execute unsigned forms:" << std::endl;
-	A.executeForm(shrub);
-	B.executeForm(robo);
-	C.executeForm(pres);
+	}
+	catch (const std::exception &e)	{ std::cerr << "Error: " << e.what() << std::endl; }
 
-	std::cout << std::endl << "Not working! Lets sign them first:" << std::endl;
-	A.signForm(shrub);
-	B.signForm(robo);
-	C.signForm(pres);
+	
+	try
+	{
+		form = someRandomIntern.makeForm("robotomy request", "Marc");
+		std::cout << "Form created: " << *form << std::endl << std::endl;
+		delete form;
 
-	std::cout << std::endl << "Now trying again should work:" << std::endl;
-	A.executeForm(shrub);
-	B.executeForm(robo);
-	C.executeForm(pres);
+	}
+	catch (const std::exception &e)	{ std::cerr << "Error: " << e.what() << std::endl; }
+	
+	try
+	{
+		form = someRandomIntern.makeForm("shrubbery creation", "Marc");
+		std::cout << "Form created: " << *form << std::endl << std::endl;
+		delete form;
 
-	std::cout << std::endl;
-	return (0);
+	}
+	catch (const std::exception &e)	{ std::cerr << "Error: " << e.what() << std::endl; }
+	
+	try
+	{
+		form = someRandomIntern.makeForm("accomodation lease", "Marc");
+		std::cout << "Form created: " << *form << std::endl << std::endl;
+		delete form;
+
+	}
+	catch (const std::exception &e)	{ std::cerr << "Error: " << e.what() << std::endl; }
+    return 0;
 }
