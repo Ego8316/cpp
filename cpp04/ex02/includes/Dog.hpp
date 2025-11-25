@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 14:50:59 by ego               #+#    #+#             */
-/*   Updated: 2025/09/01 21:39:29 by ego              ###   ########.fr       */
+/*   Updated: 2025/11/24 14:39:27 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Dog	:	public	Animal
 		Dog(void);
 		Dog(Dog const &src);
 		Dog	&operator=(Dog const &src);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		void	makeSound(void) const;
 		Brain	*getBrain(void)	const;

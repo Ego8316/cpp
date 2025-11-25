@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 14:15:22 by ego               #+#    #+#             */
-/*   Updated: 2025/09/01 21:39:26 by ego              ###   ########.fr       */
+/*   Updated: 2025/11/24 14:39:20 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Cat	:	public	Animal
 		Cat(void);
 		Cat(Cat const &src);
 		Cat	&operator=(Cat const &src);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		void	makeSound(void) const;
 		Brain	*getBrain(void) const;
