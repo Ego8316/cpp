@@ -46,7 +46,10 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 {
 	std::cout << "RobotomyRequestForm assignment operator called" << std::endl;
 	if (this != &other)
+	{
+		AForm::operator=(other);
 		_target = other._target;
+	}
 	return (*this);
 }
 

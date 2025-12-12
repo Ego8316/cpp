@@ -37,7 +37,7 @@ class	Intern
 	private:
 		typedef struct s_FormDict
 		{
-			const std::string	&formName;
+			std::string			formName;
 			AForm				*(Intern::*formFunc)(const std::string &) const;
 		}	FormDict;
 		AForm	*_makeShrubberyCreationForm(const std::string &target) const;
