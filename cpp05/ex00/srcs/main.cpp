@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 15:21:05 by ego               #+#    #+#             */
-/*   Updated: 2025/11/22 15:58:45 by ego              ###   ########.fr       */
+/*   Updated: 2025/12/12 13:50:25 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(void)
 	}
 
 	std::cout << std::endl;
-	// Now incrementing Marc until it raises an error
+	// Now decrementing Patrick until it raises an error
 	for (int i = 0; i < 5; ++i)
 	{
 		try

@@ -25,7 +25,7 @@ class	Intern
 		class	UnknownForm	:	public	std::exception
 		{
 			public:
-				const char	*what(void) const throw() { return "Unknown form!"; }
+				const char	*what(void) const throw();
 		};
 		Intern(void);
 		Intern(const Intern &other);

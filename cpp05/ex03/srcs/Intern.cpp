@@ -12,6 +12,13 @@
 
 #include "Intern.hpp"
 
+// Exceptions
+
+const char	*Intern::UnknownForm::what(void) const throw()
+{
+	return ("Unknown form!");
+}
+
 // Constructors
 
 Intern::Intern(void)

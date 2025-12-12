@@ -12,6 +12,18 @@
 
 #include "Bureaucrat.hpp"
 
+// Exceptions
+
+const char	*Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low!");
+}
+
+const char	*Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high!");
+}
+
 // Constructors
 
 Bureaucrat::Bureaucrat(void)	:	_name("Bureaucrat"), _grade(1)
@@ -20,7 +32,7 @@ Bureaucrat::Bureaucrat(void)	:	_name("Bureaucrat"), _grade(1)
 	return ;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, unsigned int grade)	:	_name(name)
+Bureaucrat::Bureaucrat(const std::string &name, int grade)	:	_name(name)
 {
 	std::cout << "Parametrized constructor called" << std::endl;
 	if (grade < 1)
@@ -77,7 +89,7 @@ const std::string	&Bureaucrat::getName(void) const
 	return (_name);
 }
 
-unsigned int	Bureaucrat::getGrade(void) const
+int	Bureaucrat::getGrade(void) const
 {
 	return (_grade);
 }

@@ -12,6 +12,23 @@
 
 #include "Form.hpp"
 
+// Exceptions
+
+const char	*Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low!");
+}
+
+const char	*Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high!");
+}
+
+const char	*Form::AlreadySignedException::what() const throw()
+{
+	return ("Already signed!");
+}
+
 // Constructors
 
 Form::Form(void)
@@ -24,7 +41,7 @@ Form::Form(void)
 	return ;
 }
 
-Form::Form(const std::string &name, unsigned int signGrade, unsigned int execGrade)
+Form::Form(const std::string &name, int signGrade, int execGrade)
 	:	_name(name),
 		_signed(false),
 		_signGrade(signGrade),
@@ -88,12 +105,12 @@ bool	Form::isSigned(void) const
 	return (_signed);
 }
 
-unsigned int	Form::getSignGrade(void) const
+int	Form::getSignGrade(void) const
 {
 	return (_signGrade);
 }
 
-unsigned int	Form::getExecGrade(void) const
+int	Form::getExecGrade(void) const
 {
 	return (_execGrade);
 }

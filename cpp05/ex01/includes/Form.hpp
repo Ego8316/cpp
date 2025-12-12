@@ -26,21 +26,21 @@ class	Form
 		class	GradeTooLowException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Grade is too low!";  }
+				const char	*what() const throw();
 		};
 		class	GradeTooHighException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Grade is too high!"; } 
+				const char	*what() const throw();
 		};
 		class	AlreadySignedException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Already signed!"; }
+				const char	*what() const throw();
 		};
 
 		Form(void);
-		Form(const std::string &name, unsigned int signGrade, unsigned int execGrade);
+		Form(const std::string &name, int signGrade, int execGrade);
 		Form(const Form &other);
 		Form	&operator=(const Form &other);
 		~Form(void);
@@ -48,14 +48,14 @@ class	Form
 		void				beSigned(const Bureaucrat &signer);
 		const std::string	&getName(void) const;
 		bool				isSigned(void) const;
-		unsigned int		getSignGrade(void) const;
-		unsigned int		getExecGrade(void) const;
+		int					getSignGrade(void) const;
+		int					getExecGrade(void) const;
 
 	private:
 		const std::string	_name;
 		bool				_signed;
-		const unsigned int	_signGrade;
-		const unsigned int	_execGrade;
+		const int			_signGrade;
+		const int			_execGrade;
 };
 
 std::ostream	&operator<<(std::ostream &os, const Form &f);

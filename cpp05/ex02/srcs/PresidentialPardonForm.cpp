@@ -68,6 +68,6 @@ const std::string	&PresidentialPardonForm::getTarget(void) const
 
 void	PresidentialPardonForm::_beExecuted(void) const
 {
-	std::cout << _target << " has been pardoned by Zaphod Beeblerox" << std::endl;
+	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 	return ;
 }

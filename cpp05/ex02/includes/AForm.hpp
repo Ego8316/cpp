@@ -26,26 +26,26 @@ class	AForm
 		class	GradeTooLowException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Grade is too low!";  }
+				const char	*what() const throw();
 		};
 		class	GradeTooHighException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Grade is too high!"; } 
+				const char	*what() const throw();
 		};
 		class	AlreadySignedException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Already signed!"; }
+				const char	*what() const throw();
 		};
 		class	UnsignedException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Not signed!"; }
+				const char	*what() const throw();
 		};
 
 		AForm(void);
-		AForm(const std::string &name, unsigned int signGrade, unsigned int execGrade);
+		AForm(const std::string &name, int signGrade, int execGrade);
 		AForm(const AForm &other);
 		AForm	&operator=(const AForm &other);
 		virtual ~AForm(void);
@@ -55,8 +55,8 @@ class	AForm
 
 		const std::string	&getName(void) const;
 		bool				isSigned(void) const;
-		unsigned int		getSignGrade(void) const;
-		unsigned int		getExecGrade(void) const;
+		int					getSignGrade(void) const;
+		int					getExecGrade(void) const;
 
 	protected:
 		virtual void		_beExecuted(void) const = 0;		
@@ -64,8 +64,8 @@ class	AForm
 	private:
 		const std::string	_name;
 		bool				_signed;
-		const unsigned int	_signGrade;
-		const unsigned int	_execGrade;
+		const int			_signGrade;
+		const int			_execGrade;
 };
 
 std::ostream	&operator<<(std::ostream &os, const AForm &f);

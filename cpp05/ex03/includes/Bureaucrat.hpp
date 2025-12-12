@@ -26,16 +26,16 @@ class	Bureaucrat
 		class	GradeTooLowException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Grade is too low!";  }
+				const char	*what() const throw();
 		};
 		class	GradeTooHighException	:	public	std::exception
 		{
 			public:
-				const char	*what() const throw() { return "Grade is too high!"; } 
+				const char	*what() const throw();
 		};
 
 		Bureaucrat(void);
-		Bureaucrat(const std::string &name, unsigned int grade);
+		Bureaucrat(const std::string &name, int grade);
 		Bureaucrat(const Bureaucrat &other);
 		Bureaucrat	&operator=(const Bureaucrat &other);
 		~Bureaucrat(void);
@@ -47,11 +47,11 @@ class	Bureaucrat
 		void				executeForm(const AForm &form) const;
 
 		const std::string	&getName(void) const;
-		unsigned int		getGrade(void) const;
+		int					getGrade(void) const;
 	
 	private:
 		const std::string	_name;
-		unsigned int		_grade;
+		int					_grade;
 };
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &b);

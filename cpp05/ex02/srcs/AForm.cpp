@@ -12,6 +12,28 @@
 
 #include "AForm.hpp"
 
+// Exceptions
+
+const char	*AForm::GradeTooLowException::what() const throw()
+{
+	return ("Grade is too low!");
+}
+
+const char	*AForm::GradeTooHighException::what() const throw()
+{
+	return ("Grade is too high!");
+}
+
+const char	*AForm::AlreadySignedException::what() const throw()
+{
+	return ("Already signed!");
+}
+
+const char	*AForm::UnsignedException::what() const throw()
+{
+	return ("Not signed!");
+}
+
 // Constructors
 
 AForm::AForm(void)
@@ -24,7 +46,7 @@ AForm::AForm(void)
 	return ;
 }
 
-AForm::AForm(const std::string &name, unsigned int signGrade, unsigned int execGrade)
+AForm::AForm(const std::string &name, int signGrade, int execGrade)
 	:	_name(name),
 		_signed(false),
 		_signGrade(signGrade),
@@ -98,12 +120,12 @@ bool	AForm::isSigned(void) const
 	return (_signed);
 }
 
-unsigned int	AForm::getSignGrade(void) const
+int	AForm::getSignGrade(void) const
 {
 	return (_signGrade);
 }
 
-unsigned int	AForm::getExecGrade(void) const
+int	AForm::getExecGrade(void) const
 {
 	return (_execGrade);
 }
