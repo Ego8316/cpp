@@ -26,3 +26,5 @@ bureaucrat
 form*
 intern
 *.pdf
+*.txt
+convert
