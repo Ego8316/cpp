@@ -28,3 +28,4 @@ intern
 *.pdf
 *.txt
 convert
+serialize

@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 15:28:11 by ego               #+#    #+#             */
-/*   Updated: 2025/12/14 15:35:19 by ego              ###   ########.fr       */
+/*   Updated: 2025/12/14 15:52:41 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,8 @@ static void			convertPseudo(const std::string &value);
 // Private constructors and destructor
 
 ScalarConverter::ScalarConverter(void) { }
-ScalarConverter::ScalarConverter(const ScalarConverter &src) {(void)src;}
-ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &src)
-{
-	(void)src;
-	return (*this);
-}
+ScalarConverter::ScalarConverter(const ScalarConverter &src) { (void)src; }
+ScalarConverter	&ScalarConverter::operator=(const ScalarConverter &src) { return ((void)src, *this); }
 ScalarConverter::~ScalarConverter(void) { }
 
 static std::string	formatFloat(double value, bool suffix)

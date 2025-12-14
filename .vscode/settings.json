@@ -68,5 +68,6 @@
 		"filesystem": "cpp",
 		"queue": "cpp",
 		"stack": "cpp"
-	}
+	},
+	"editor.fontSize": 15
 }
