@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/12/14 18:14:21 by ego              ###   ########.fr        #
+#    Updated: 2025/12/14 20:26:56 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CC			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 RM			=	rm -rf
 
-NAME		=	array
+NAME		=	span
 
 all			:	$(NAME)
 
