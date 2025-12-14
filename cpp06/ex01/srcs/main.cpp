@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:04:48 by ego               #+#    #+#             */
-/*   Updated: 2025/12/14 15:56:54 by ego              ###   ########.fr       */
+/*   Updated: 2025/12/14 16:02:48 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,6 @@ int	main(void)
 		<< "Deserialized pointer = " << check << std::endl
 		<< "Data before serialization: " << *data << std::endl
 		<< "Data after deserialization: " << *check << std::endl;
+
+	return (0);
 }
