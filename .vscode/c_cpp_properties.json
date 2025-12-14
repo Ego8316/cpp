@@ -3,7 +3,7 @@
         {
             "name": "42",
             "includePath": [
-                "/home/ego/42/cpp/cpp06/ex02/includes"
+                "/home/ego/42/cpp/cpp07/ex00/includes"
             ],
             "compilerPath": "/usr/bin/clang++",
             "cStandard": "c11",
