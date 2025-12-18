@@ -3,15 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
+#    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/12/14 20:26:56 by ego              ###   ########.fr        #
+#    Updated: 2025/12/17 14:17:01 by hcavet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SDIR		=	srcs/
-FILES		=	main.cpp
+FILES		=	main.cpp \
+				Span.cpp
 ODIR		=	objs/
 SRCS		=	$(addprefix $(SDIR), $(FILES))
 OBJS		=	$(addprefix $(ODIR), $(FILES:.cpp=.o))
