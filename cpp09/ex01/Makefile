@@ -6,12 +6,13 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/12/18 20:37:11 by ego              ###   ########.fr        #
+#    Updated: 2025/12/18 20:44:23 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SDIR		=	srcs/
-FILES		=	main.cpp
+FILES		=	main.cpp	\
+				RPN.cpp
 ODIR		=	objs/
 SRCS		=	$(addprefix $(SDIR), $(FILES))
 OBJS		=	$(addprefix $(ODIR), $(FILES:.cpp=.o))
