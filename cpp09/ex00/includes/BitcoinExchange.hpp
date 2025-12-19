@@ -6,9 +6,13 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 20:41:41 by ego               #+#    #+#             */
-/*   Updated: 2025/12/18 20:43:20 by ego              ###   ########.fr       */
+/*   Updated: 2025/12/18 23:39:10 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#include <iostream>
+#include <string>
+#include <stdexcept>
 
