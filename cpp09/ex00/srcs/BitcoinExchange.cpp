@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:48:02 by ego               #+#    #+#             */
-/*   Updated: 2025/12/23 04:33:34 by ego              ###   ########.fr       */
+/*   Updated: 2025/12/23 16:10:30 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,7 @@ const char	*BitcoinExchange::NumberTooLargeException::what() const throw()
 
 BitcoinExchange::BitcoinExchange(const std::string &filename)
 {
-	try
-	{
-
-	}
-	catch (const std::exception &e)
-	{
-
-	}
+	std::cout << filename << std::endl;
 }
 
 BitcoinExchange::~BitcoinExchange(void)
@@ -69,7 +62,11 @@ static bool	isLeapYear(const int y)
 
 static int	daysInMonth(const int y, const int m)
 {
-	static const int	days[12] = {}
+	static const int	days[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+	if (m == 2 && isLeapYear(y))
+		return (29);
+	return (days[m - 1]);
 }
 
 Date	BitcoinExchange::_strToDate(const std::string &s)
@@ -86,6 +83,9 @@ Date	BitcoinExchange::_strToDate(const std::string &s)
 	date.year = std::atoi(year.c_str());
 	date.month = std::atoi(month.c_str());
 	date.day = std::atoi(day.c_str());
+	if (date.year < 2000 || date.year > 2100 || date.month < 1 || date.month > 12
+			|| date.day < 1 || date.day > daysInMonth(date.year, date.month))
+		throw InvalidDateException();
 	return (date);
 }
 
@@ -93,6 +93,7 @@ float	BitcoinExchange::_strToRate(const std::string &s)
 {
 	float	rate;
 
+	rate = s.size();
 	return (rate);
 }
 
