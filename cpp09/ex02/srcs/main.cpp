@@ -79,6 +79,12 @@ static bool	check_input(const int ac, const char **av)
 	return (true);
 }
 
+/**
+ * @brief Prints the original input order and the sorted container.
+ * 
+ * @param av Argument vector.
+ * @param v Sorted container to display.
+ */
 static void	printBeforeAfter(const char **av, const std::vector<int> &v)
 {
 	std::cout << "Before:\t";
@@ -92,6 +98,13 @@ static void	printBeforeAfter(const char **av, const std::vector<int> &v)
 	std::cout << "After:\t" << v << std::endl;
 }
 
+/**
+ * @brief Prints timing information in the subject's expected format.
+ * 
+ * @param n Number of elements processed.
+ * @param c Container name to display.
+ * @param t Time in milliseconds.
+ */
 static void	printTime(const int n, const std::string	&c, const double t)
 {
 	std::cout << "Time to process a range of "
