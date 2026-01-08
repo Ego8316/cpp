@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:57:15 by ego               #+#    #+#             */
-/*   Updated: 2026/01/09 00:55:01 by ego              ###   ########.fr       */
+/*   Updated: 2026/01/09 00:58:11 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ static void	printBeforeAfter(const char **av, const std::vector<int> &v)
 	}
 	std::cout << std::endl;
 	std::cout << "After:\t" << v << std::endl;
+	return ;
 }
 
 /**
