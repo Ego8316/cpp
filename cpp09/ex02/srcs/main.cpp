@@ -1,0 +1,98 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/08 16:57:15 by ego               #+#    #+#             */
+/*   Updated: 2026/01/08 17:34:36 by ego              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PmergeMe.hpp"
+
+/**
+ * @brief Validates that a string is a positive integer.
+ * 
+ * @param s String to be checked.
+ * 
+ * @return true if s is a valid positive integer (> 0), false otherwise.
+ */
+static bool	is_positive_int(const char *s)
+{
+	int			i = 0;
+	long long	n = 0;
+
+	if (s[i] == '+' || s[i] == '-')
+		++i;
+	for (; std::isdigit(static_cast<unsigned char>(s[i])); ++i)
+	{
+		n = n * 10 + s[i] - '0';
+		if (n > std::numeric_limits<int>::max())
+			return (false);
+	}
+	if (s[i] || (n > 0 && s[0] == '-'))
+		return (false);
+	if (n == 0)
+		return (false);
+	return (true);
+}
+
+/**
+ * @brief Checks if there is any duplicate number in the argument vector.
+ * Compares numeric values, so "1", "+1", and "01" are treated as duplicates.
+ * 
+ * @param av Argument vector.
+ * 
+ * @return true if there is any duplicate, false otherwise.
+ */
+static bool	have_duplicates(const char **av)
+{
+	for (int i = 1; av[i]; ++i)
+		for (int j = 1; av[j]; ++j)
+			if (i != j && std::atoi(av[i]) == std::atoi(av[j]))
+				return (true);
+	return (false);
+}
+
+/**
+ * @brief Checks the integrity of the input. Ensures every argument is a
+ * strictly positive integer and that there is no duplicate.
+ * 
+ * @param ac Argument count.
+ * @param av Argument vector.
+ * 
+ * @return true if input is correct, false otherwise.
+ */
+static bool	check_input(const int ac, const char **av)
+{
+	if (ac == 1)
+		return (false);
+	for (int i = 1; av[i]; ++i)
+	{
+		if (!is_positive_int(av[i]))
+			return (false);
+	}
+	if (have_duplicates(av))
+		return (false);
+	return (true);
+}
+
+/**
+ * @brief Ford-Johnson's entrypoint.
+ * 
+ * @param ac Argument count.
+ * @param av Argument vector.
+ * 
+ * @return 1 in case of any error, 0 otherwise.
+ */
+int	main(int ac, const char **av)
+{
+	if (!check_input(ac, av))
+	{
+		std::cerr << "Error" << std::endl;
+		return (1);
+	}
+	return (0);
+}
