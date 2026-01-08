@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:57:15 by ego               #+#    #+#             */
-/*   Updated: 2026/01/08 17:34:36 by ego              ###   ########.fr       */
+/*   Updated: 2026/01/09 00:55:01 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,28 @@ static bool	check_input(const int ac, const char **av)
 	return (true);
 }
 
+static void	printBeforeAfter(const char **av, const std::vector<int> &v)
+{
+	std::cout << "Before:\t";
+	for (int i = 1; av[i]; ++i)
+	{
+		if (i != 1)
+			std::cout << " ";
+		std::cout << std::atoi(av[i]);
+	}
+	std::cout << std::endl;
+	std::cout << "After:\t" << v << std::endl;
+}
+
+static void	printTime(const int n, const std::string	&c, const double t)
+{
+	std::cout << "Time to process a range of "
+		<< std::setfill(' ') << std::setw(4) << n
+		<< " elements with std::" << c << " :\t"
+		<< t << " ms" << std::endl;
+	return ;
+}
+
 /**
  * @brief Ford-Johnson's entrypoint.
  * 
@@ -94,5 +116,12 @@ int	main(int ac, const char **av)
 		std::cerr << "Error" << std::endl;
 		return (1);
 	}
+	PmergeMe<std::vector<int> >	vec(av);
+	vec.run();
+	PmergeMe<std::list<int> >	lis(av);
+	lis.run();
+	printBeforeAfter(av, vec.getContainer());
+	printTime(ac - 1, "vector", vec.getTime());
+	printTime(ac - 1, "list", lis.getTime());
 	return (0);
 }
