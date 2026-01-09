@@ -19,7 +19,7 @@
  * 
  * @return true if s is a valid positive integer (> 0), false otherwise.
  */
-static bool	is_positive_int(const char *s)
+static bool	isPositiveInt(const char *s)
 {
 	int			i = 0;
 	long long	n = 0;
@@ -47,7 +47,7 @@ static bool	is_positive_int(const char *s)
  * 
  * @return true if there is any duplicate, false otherwise.
  */
-static bool	have_duplicates(const char **av)
+static bool	haveDuplicates(const char **av)
 {
 	for (int i = 1; av[i]; ++i)
 		for (int j = 1; av[j]; ++j)
@@ -65,16 +65,16 @@ static bool	have_duplicates(const char **av)
  * 
  * @return true if input is correct, false otherwise.
  */
-static bool	check_input(const int ac, const char **av)
+static bool	checkInput(const int ac, const char **av)
 {
 	if (ac == 1)
 		return (false);
 	for (int i = 1; av[i]; ++i)
 	{
-		if (!is_positive_int(av[i]))
+		if (!isPositiveInt(av[i]))
 			return (false);
 	}
-	if (have_duplicates(av))
+	if (haveDuplicates(av))
 		return (false);
 	return (true);
 }
@@ -125,7 +125,7 @@ static void	printTime(const int n, const std::string	&c, const double t)
  */
 int	main(int ac, const char **av)
 {
-	if (!check_input(ac, av))
+	if (!checkInput(ac, av))
 	{
 		std::cerr << "Error" << std::endl;
 		return (1);

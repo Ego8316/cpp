@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:57:30 by ego               #+#    #+#             */
-/*   Updated: 2026/01/09 00:41:11 by ego              ###   ########.fr       */
+/*   Updated: 2026/01/09 02:38:19 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 #include <list>
 #include <queue>
 #include <algorithm>
+#include <iterator>
 #include <unistd.h>
 
 template <typename C>
@@ -46,6 +47,12 @@ class	PmergeMe
 		int		_comps;
 		clock_t	_start;
 		double	_time;
+
+		
+		template <typename It> bool	_comp(It, It);
+		template <typename It> It	_nextIt(It, int) const;
+		template <typename It> void	_swapBlock(It, int);
+		template <typename It> It	_blockLast(It, int);
 
 		long	_jacobsthal(long n);
 };
