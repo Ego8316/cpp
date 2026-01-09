@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:57:30 by ego               #+#    #+#             */
-/*   Updated: 2026/01/09 02:38:19 by ego              ###   ########.fr       */
+/*   Updated: 2026/01/09 15:32:50 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ class	PmergeMe
 		clock_t	_start;
 		double	_time;
 
+		void						_blockSort(int);
 		
 		template <typename It> bool	_comp(It, It);
 		template <typename It> It	_nextIt(It, int) const;

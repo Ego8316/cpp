@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:57:15 by ego               #+#    #+#             */
-/*   Updated: 2026/01/09 00:58:11 by ego              ###   ########.fr       */
+/*   Updated: 2026/01/09 15:40:09 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static bool	isPositiveInt(const char *s)
 	}
 	if (s[i] || (n > 0 && s[0] == '-'))
 		return (false);
-	if (n == 0)
-		return (false);
+	// if (n == 0)
+	// 	return (false);
 	return (true);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 23:48:11 by ego               #+#    #+#             */
-/*   Updated: 2026/01/09 02:57:29 by ego              ###   ########.fr       */
+/*   Updated: 2026/01/09 16:33:01 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,7 @@ PmergeMe<C>::~PmergeMe(void)
 template <typename C>
 int	PmergeMe<C>::run(void)
 {
-	int							blockSize = 1;
-	typename C::iterator		it = _container.begin();
-	typename C::iterator		end = _container.end();
-
-	while (it != end)
-	{
-		typename C::iterator	lastOfFirst = _blockLast(it, blockSize);
-		typename C::iterator	nextStart = _nextIt(it, blockSize);
-
-		if (nextStart == end)
-			break ;
-		if (_comp(_blockLast(nextStart, blockSize), lastOfFirst))
-			_swapBlock(lastOfFirst, blockSize);
-		std::advance(it, blockSize * 2);
-	}
+	_blockSort(1);
 	_time = 1000.0 * static_cast<double>(std::clock() - _start) / CLOCKS_PER_SEC;
 	return (_comps);
 }
@@ -91,6 +77,29 @@ template <typename C>
 double	PmergeMe<C>::getTime(void) const
 {
 	return (_time);
+}
+
+template <typename C>
+void	PmergeMe<C>::_blockSort(int blockSize)
+{
+	typedef typename C::iterator	Iterator;
+
+	int	blockCount = _container.size() / blockSize;
+	if (blockCount < 2)
+		return ;
+
+	Iterator	start = _container.begin();
+	Iterator	end = _nextIt(start, blockCount / 2 * 2 * blockSize);
+
+	for (Iterator it = start; it != end; std::advance(it, 2 * blockSize))
+	{
+		Iterator	thisBlock = _nextIt(it, blockSize - 1);
+		Iterator	nextBlock = _nextIt(it, blockSize * 2 - 1);
+		if (_comp(nextBlock, thisBlock))
+			_swapBlock(thisBlock, blockSize);
+	}
+	_blockSort(blockSize * 2);
+	return ;
 }
 
 /**
