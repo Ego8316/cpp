@@ -126,10 +126,7 @@ void	PmergeMe<C>::_blockSort(int blockSize)
 {
 	typedef typename C::iterator	Iterator;
 
-	int	blockCount = _container.size() / blockSize;
-	if (blockCount < 2)
-		return ;
-
+	int			blockCount = _container.size() / blockSize;
 	Iterator	start = _container.begin();
 	Iterator	end = _nextIt(start, blockCount / 2 * 2 * blockSize);
 
@@ -236,7 +233,9 @@ void	PmergeMe<C>::_insertPendIntoMain(std::vector<typename C::iterator> &mainCha
 	{
 		int		orderIndex = order[i];
 		ChainIt	pendIt = _nextIt(pendChain.begin(), orderIndex - 1);
-		ChainIt	boundIt = std::find(mainChain.begin(), mainChain.end(), aRefs[orderIndex + 1]);
+		ChainIt	boundIt = mainChain.end();
+		if (orderIndex + 1 < static_cast<int>(aRefs.size()))
+			boundIt = std::find(mainChain.begin(), mainChain.end(), aRefs[orderIndex + 1]);
 		ChainIt	low = mainChain.begin();
 		ChainIt	high = boundIt;
 		ChainIt	mid;

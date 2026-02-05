@@ -115,7 +115,6 @@ int	main(int ac, const char **av)
 	PmergeMe<std::list<int> >	lis(av);
 	lis.run();
 	printBeforeAfter(av, vec.getContainer());
-	printBeforeAfter(av, lis.getContainer());
 	printTime(ac - 1, "vector", vec.getTime());
 	printTime(ac - 1, "list", lis.getTime());
 	return (0);
