@@ -6,13 +6,12 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 15:08:01 by ego               #+#    #+#              #
-#    Updated: 2025/12/18 20:44:39 by ego              ###   ########.fr        #
+#    Updated: 2026/02/04 20:56:06 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SDIR		=	srcs/
-FILES		=	main.cpp		\
-				PmergeMe.cpp
+FILES		=	main.cpp
 ODIR		=	objs/
 SRCS		=	$(addprefix $(SDIR), $(FILES))
 OBJS		=	$(addprefix $(ODIR), $(FILES:.cpp=.o))
@@ -29,7 +28,7 @@ all			:	$(NAME)
 
 $(NAME)		:	$(ODIR) $(OBJS)
 				$(CC) $(CFLAGS) $(INCL) $(OBJS) -o $(NAME)
-				printf "$(COLOR_G)[OK] $(NAME) is ready!$(C_RESET)\n" || \
+				printf "$(COLOR_G)\r\n[OK] $(NAME) is ready!$(C_RESET)\n" || \
 				printf "$(COLOR_R)[KO] Something went wrong.$(C_RESET)\n"
 
 $(ODIR)		:
@@ -37,7 +36,7 @@ $(ODIR)		:
 				printf "Object directory created.\n"
 
 $(ODIR)%.o	:	$(SDIR)%.cpp
-				echo "Compiling $<..."
+				printf "\rCompiling %s..." "$<"
 				$(CC) $(CFLAGS) $(INCL) -c $< -o $@ || \
 				(printf "$(COLOR_R)[KO] Compilation failed.$(C_RESET)\n" && false)
 

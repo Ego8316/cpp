@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:57:30 by ego               #+#    #+#             */
-/*   Updated: 2026/01/09 15:32:50 by ego              ###   ########.fr       */
+/*   Updated: 2026/02/04 20:57:56 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include <algorithm>
 #include <iterator>
 #include <unistd.h>
+#include <cmath>
 
 template <typename C>
 class	PmergeMe
@@ -43,19 +44,23 @@ class	PmergeMe
 		PmergeMe(const PmergeMe &);
 		PmergeMe	&operator=(const PmergeMe &);
 
-		C		_container;
-		int		_comps;
-		clock_t	_start;
-		double	_time;
+		C					_container;
+		int					_comps;
+		clock_t				_start;
+		double				_time;
+		std::vector<long>	_jacobstahl;
 
-		void						_blockSort(int);
-		
+		void				_mergeInsertSort(int);
+		void				_blockSort(int);
+		void				_buildChains(int, std::vector<typename C::iterator> &, std::vector<typename C::iterator> &);
+		std::vector<int>	_buildJacobOrder(int) const;
+		void				_insertPendIntoMain(std::vector<typename C::iterator> &, std::vector<typename C::iterator> &);
+		void				_copyMain(int, const std::vector<typename C::iterator> &);
+
 		template <typename It> bool	_comp(It, It);
 		template <typename It> It	_nextIt(It, int) const;
 		template <typename It> void	_swapBlock(It, int);
 		template <typename It> It	_blockLast(It, int);
-
-		long	_jacobsthal(long n);
 };
 
 template <template <typename, typename> class C, typename T, typename Alloc>

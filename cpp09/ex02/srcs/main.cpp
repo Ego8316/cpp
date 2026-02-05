@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 16:57:15 by ego               #+#    #+#             */
-/*   Updated: 2026/01/09 15:40:09 by ego              ###   ########.fr       */
+/*   Updated: 2026/02/04 23:22:48 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,26 +80,6 @@ static bool	checkInput(const int ac, const char **av)
 }
 
 /**
- * @brief Prints the original input order and the sorted container.
- * 
- * @param av Argument vector.
- * @param v Sorted container to display.
- */
-static void	printBeforeAfter(const char **av, const std::vector<int> &v)
-{
-	std::cout << "Before:\t";
-	for (int i = 1; av[i]; ++i)
-	{
-		if (i != 1)
-			std::cout << " ";
-		std::cout << std::atoi(av[i]);
-	}
-	std::cout << std::endl;
-	std::cout << "After:\t" << v << std::endl;
-	return ;
-}
-
-/**
  * @brief Prints timing information in the subject's expected format.
  * 
  * @param n Number of elements processed.
@@ -135,6 +115,7 @@ int	main(int ac, const char **av)
 	PmergeMe<std::list<int> >	lis(av);
 	lis.run();
 	printBeforeAfter(av, vec.getContainer());
+	printBeforeAfter(av, lis.getContainer());
 	printTime(ac - 1, "vector", vec.getTime());
 	printTime(ac - 1, "list", lis.getTime());
 	return (0);
